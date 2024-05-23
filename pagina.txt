@@ -1,0 +1,230 @@
+
+
+Updater (Installer only):
+
+* WinGUp (for Notepad++) v5.2.8
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutinas Mari</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+        body {
+            font-family: 'Dancing Script', cursive;
+            background-color: #fafafa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #a3d8f4;
+            color: white;
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+        main {
+            max-width: 900px;
+            background: white;
+            padding: 2rem;
+            margin: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        footer {
+            background-color: #a3d8f4;
+            color: white;
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+        }
+        .quote {
+            font-style: italic;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .schedule-table th {
+            background-color: #f2f2f2;
+        }
+        .highlight {
+            background-color: #d7f7d7;
+        }
+        .notification-btn {
+            background-color: #a3d8f4;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .notification-btn:hover {
+            background-color: #87c6e0;
+        }
+        .assistant {
+            padding: 1rem;
+            background-color: #f7f7f7;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        .close-share {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .close-share button {
+            background-color: #f47c7c;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        .close-share button:hover {
+            background-color: #e06464;
+        }
+    </style>
+    <script>
+        function getQuote() {
+            const quotes = [
+                "La vida es lo que haces de ella.",
+                "Cada día es una nueva oportunidad.",
+                "La felicidad no es algo hecho. Viene de tus propias acciones.",
+                "La única forma de hacer un gran trabajo es amar lo que haces.",
+                "El éxito es la suma de pequeños esfuerzos repetidos día tras día."
+            ];
+            const today = new Date().getDate();
+            return quotes[today % quotes.length];
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("daily-quote").textContent = getQuote();
+        });
+
+        function notify() {
+            alert("¡Es hora de realizar tu actividad!");
+        }
+
+        function askSofi() {
+            const question = prompt("Pregunta a Sofi:");
+            if (question) {
+                alert("Sofi: ¡Claro! Aquí tienes información sobre: " + question);
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Rutinas Mari</h1>
+    </header>
+    <main>
+        <section id="challenge">
+            <h2>Reto de 30 días</h2>
+            <p>Aquí hay algunos ejemplos de rutinas saludables para crear buenos hábitos:</p>
+            <ul>
+                <li>Levántate temprano y haz 10 minutos de meditación.</li>
+                <li>Ejercicio diario: 30 minutos de caminata o yoga.</li>
+                <li>Come al menos una porción de frutas y verduras en cada comida.</li>
+                <li>Lee 20 páginas de un libro cada día.</li>
+                <li>Escribe un diario antes de dormir, reflexionando sobre tu día.</li>
+            </ul>
+        </section>
+        <section id="schedule">
+            <h2>Horario</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Actividad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight">
+                        <td>7:00 - 8:00 AM</td>
+                        <td>Meditar y Desayunar</td>
+                    </tr>
+                    <tr>
+                        <td>8:00 - 9:00 AM</td>
+                        <td>Ejercicio</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>9:00 - 11:00 AM</td>
+                        <td>Trabajo/Estudio</td>
+                    </tr>
+                    <tr>
+                        <td>11:00 - 12:00 PM</td>
+                        <td>Descanso y Lectura</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>12:00 - 1:00 PM</td>
+                        <td>Almuerzo</td>
+                    </tr>
+                    <tr>
+                        <td>1:00 - 3:00 PM</td>
+                        <td>Trabajo/Estudio</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>3:00 - 4:00 PM</td>
+                        <td>Tiempo libre</td>
+                    </tr>
+                    <tr>
+                        <td>4:00 - 6:00 PM</td>
+                        <td>Proyectos Personales</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>6:00 - 7:00 PM</td>
+                        <td>Cena</td>
+                    </tr>
+                    <tr>
+                        <td>7:00 - 9:00 PM</td>
+                        <td>Tiempo en familia/Amigos</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>9:00 - 10:00 PM</td>
+                        <td>Lectura y Reflexión</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 PM</td>
+                        <td>Hora de dormir</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="notification-btn" onclick="notify()">Activar Notificaciones</button>
+        </section>
+        <section id="questions">
+            <h2>Preguntas</h2>
+            <div class="assistant">
+                <p>Pregúntale a Sofi sobre hábitos saludables:</p>
+                <button class="notification-btn" onclick="askSofi()">Preguntar a Sofi</button>
+            </div>
+        </section>
+        <div class="quote" id="daily-quote"></div>
+        <div class="close-share">
+            <button onclick="alert('Cerrar sesión')">Cerrar Sesión</button>
+            <button onclick="alert('Compartir página')">Compartir Página</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rutinas Mari. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
